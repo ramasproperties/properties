@@ -1,0 +1,91 @@
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=DM+Sans:wght@300;400;500&display=swap');
+  .rp-root { font-family: 'DM Sans', sans-serif; background: #F5EFE0; min-height: 100vh; color: #1a1a1a; }
+  .rp-header { background: #1B4D4A; padding: 2rem 1.5rem 1.5rem; text-align: center; border-bottom: 3px solid #C9903A; }
+  .rp-ornament { display: flex; justify-content: center; gap: 6px; margin-bottom: 1rem; }
+  .rp-diamond { width: 8px; height: 8px; background: #C9903A; transform: rotate(45deg); }
+  .rp-diamond.sm { width: 5px; height: 5px; margin-top: 1.5px; }
+  .rp-brand { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 600; color: #F5EFE0; letter-spacing: 0.03em; margin: 0 0 4px; }
+  .rp-tagline { font-size: 13px; color: #C9903A; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 300; margin: 0 0 1rem; }
+  .rp-ig-link { display: inline-flex; align-items: center; gap: 6px; background: rgba(201,144,58,0.15); border: 1px solid rgba(201,144,58,0.4); color: #C9903A; text-decoration: none; padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 500; letter-spacing: 0.05em; transition: background 0.2s; }
+  .rp-ig-link:hover { background: rgba(201,144,58,0.28); }
+  .rp-section-label { text-align: center; padding: 2rem 1.5rem 1rem; }
+  .rp-section-label h2 { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 600; color: #1B4D4A; margin: 0 0 4px; }
+  .rp-section-label p { font-size: 13px; color: #6b6b6b; margin: 0; }
+  .rp-divider { display: flex; align-items: center; justify-content: center; gap: 10px; margin: 4px 0 0; }
+  .rp-divider-line { width: 40px; height: 1px; background: #C9903A; }
+  .rp-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem; padding: 1rem 1.5rem 2rem; max-width: 900px; margin: 0 auto; }
+  .rp-card { background: #FFFDF7; border-radius: 12px; overflow: hidden; border: 1px solid rgba(201,144,58,0.2); display: flex; flex-direction: column; transition: transform 0.2s, box-shadow 0.2s; }
+  .rp-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(27,77,74,0.12); }
+  .rp-img-wrap { width: 100%; aspect-ratio: 1/1; overflow: hidden; background: #E8E0D0; position: relative; }
+  .rp-img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .rp-badge { position: absolute; top: 10px; left: 10px; background: #1B4D4A; color: #F5EFE0; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; padding: 3px 8px; border-radius: 4px; font-weight: 500; }
+  .rp-card-body { padding: 1rem 1rem 0.75rem; flex: 1; display: flex; flex-direction: column; gap: 4px; }
+  .rp-title { font-size: 14px; font-weight: 500; color: #1a1a1a; margin: 0; line-height: 1.4; }
+  .rp-price { font-family: 'Playfair Display', serif; font-size: 16px; color: #C9903A; font-weight: 600; margin: 0; }
+  .rp-location { display: inline-flex; align-items: center; gap: 4px; font-size: 11px; font-weight: 500; color: #1B4D4A; background: rgba(27,77,74,0.08); border-radius: 4px; padding: 2px 7px 2px 5px; margin: 2px 0 4px; width: fit-content; }
+  .rp-desc { font-size: 12px; color: #7a7a7a; line-height: 1.6; margin: 0; flex: 1; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+  .rp-card-footer { padding: 0 1rem 1rem; }
+  .rp-cta { display: block; width: 100%; text-align: center; background: #1B4D4A; color: #F5EFE0; text-decoration: none; padding: 9px 0; border-radius: 8px; font-size: 13px; font-weight: 500; letter-spacing: 0.04em; transition: background 0.2s; border: none; cursor: pointer; }
+  .rp-cta:hover { background: #153d3a; }
+  .rp-footer { background: #1B4D4A; text-align: center; padding: 1.5rem; border-top: 3px solid #C9903A; }
+  .rp-footer p { color: rgba(245,239,224,0.6); font-size: 12px; margin: 4px 0 0; }
+  .rp-footer strong { font-family: 'Playfair Display', serif; color: #F5EFE0; font-size: 15px; font-weight: 400; letter-spacing: 0.06em; }
+</style>
+
+<div class="rp-root">
+  <header class="rp-header">
+    <div class="rp-ornament">
+      <div class="rp-diamond sm"></div>
+      <div class="rp-diamond"></div>
+      <div class="rp-diamond sm"></div>
+    </div>
+    <h1 class="rp-brand">Rama's Properties</h1>
+    <p class="rp-tagline">Properties for Muslims in Indonesia</p>
+    <a href="https://instagram.com/ramasproperties" class="rp-ig-link" target="_blank">
+      <i class="ti ti-brand-instagram" aria-hidden="true"></i>
+      @ramasproperties
+    </a>
+  </header>
+
+  <div class="rp-grid" id="listing-grid"></div>
+
+  <footer class="rp-footer">
+    <strong>Rama's Properties</strong>
+    <p>Properties for Muslims in Indonesia</p>
+  </footer>
+</div>
+
+<script>
+const IG_DM = "https://www.instagram.com/ramasproperties/";
+const listings = [
+  { title: "Rumah Minimalis 2 Lantai, Siap Huni", price: "Rp 650.000.000", location: "Sleman, Yogyakarta", description: "Rumah nyaman 3 kamar tidur, 2 kamar mandi, dekat masjid dan sekolah Islam. Lingkungan tenang dan aman, cocok untuk keluarga muda.", badge: "Dijual", img: "https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=600&q=80" },
+  { title: "Kavling Tanah Strategis Pinggir Jalan", price: "Rp 320.000.000", location: "Bantul, Yogyakarta", description: "Tanah SHM luas 150m², akses jalan aspal, cocok untuk bangun rumah atau investasi. Dekat pesantren dan pasar tradisional.", badge: "Kavling", img: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=600&q=80" },
+  { title: "Ruko 2 Lantai, Lokasi Ramai", price: "Rp 980.000.000", location: "Depok, Sleman", description: "Ruko strategis di jalan utama, cocok untuk usaha halal, toko, klinik, atau kantor. Sertifikat lengkap, siap pakai.", badge: "Dijual", img: "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600&q=80" },
+  { title: "Rumah Asri Cluster Islami", price: "Rp 850.000.000", location: "Mlati, Sleman", description: "Hunian eksklusif dalam cluster bernuansa Islami. Terdapat mushola bersama, taman bermain anak, dan sistem keamanan 24 jam.", badge: "Dijual", img: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=600&q=80" },
+  { title: "Tanah Sawah & Kebun, Cocok Investasi", price: "Rp 210.000.000", location: "Prambanan, Klaten", description: "Tanah produktif seluas 500m², SHM atas nama, akses mudah, potensi berkembang. Ideal untuk tabungan properti jangka panjang.", badge: "Kavling", img: "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=600&q=80" },
+  { title: "Apartemen Studio, Dekat UGM", price: "Rp 290.000.000", location: "Sinduadi, Sleman", description: "Unit apartemen studio modern, cocok untuk mahasiswa atau investasi kos eksklusif. Dekat kampus, halal food, dan transportasi publik.", badge: "Dijual", img: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=600&q=80" }
+];
+
+const grid = document.getElementById('listing-grid');
+listings.forEach(p => {
+  grid.innerHTML += `
+    <div class="rp-card">
+      <div class="rp-img-wrap">
+        <img src="${p.img}" alt="${p.title}" loading="lazy" />
+        <span class="rp-badge">${p.badge}</span>
+      </div>
+      <div class="rp-card-body">
+        <p class="rp-title">${p.title}</p>
+        <p class="rp-price">${p.price}</p>
+        <span class="rp-location"><i class="ti ti-map-pin" style="font-size:12px" aria-hidden="true"></i>${p.location}</span>
+        <p class="rp-desc">${p.description}</p>
+      </div>
+      <div class="rp-card-footer">
+        <a href="${IG_DM}" class="rp-cta" target="_blank">Hubungi Kami</a>
+      </div>
+    </div>
+  `;
+});
+</script>
